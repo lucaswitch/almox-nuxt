@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: almox
+      MYSQL_USER: almox_user
+      MYSQL_PASSWORD: password
+    networks:
+      - application
+    ports:
+      - "3001:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin-container
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: almox
+      MYSQL_USER: almox_user
+      MYSQL_PASSWORD: password
+      PMA_HOST: mysql
+    #      PMA_USER: almox_user
+    #      PMA_PASSWORD: password
+    ports:
+      - "3002:80"
+    volumes:
+      - ./data/mysqlworkbench:/config
+    networks:
+      - application
+  node:
+    image: node:latest
+    container_name: node-container
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: almox
+      MYSQL_USER: almox_user
+      MYSQL_PASSWORD: password
+    networks:
+      - application
+
+networks:
+  application:
+    driver: bridge
