@@ -32,16 +32,6 @@ services:
       - ./data/mysqlworkbench:/config
     networks:
       - application
-  node:
-    image: node:latest
-    container_name: node-container
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: almox
-      MYSQL_USER: almox_user
-      MYSQL_PASSWORD: password
-    networks:
-      - application
 
 networks:
   application:
