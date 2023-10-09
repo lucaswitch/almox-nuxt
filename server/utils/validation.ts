@@ -20,3 +20,23 @@ export const MaterialSchema = object({
     metric: string().required("A unidade do material é requerido").max(25),
     note: string().required("A observação do material é requerido").max(1000),
 });
+
+
+export const UserSchema = object({
+    full_name: string().required("O nome completo é requerido")
+        .typeError("Preencha uma nome completo válido.")
+        .min(1).max(100)
+        .label('Nome completo'),
+    password: string()
+        .typeError("Preencha uma senha válida.")
+        .required("A senha é requerida")
+        .min(8)
+        .max(40)
+        .label('Senha'),
+    type: string()
+        .typeError("Preencha o tipo do usuário.")
+        .required("O tipo do usuário é requerido.")
+        .oneOf(['Admin', 'Professor'])
+        .label('Tipo'),
+    username: string().typeError('Preencha o usuário').required().min(2).max(40).label('Usuário')
+});

@@ -51,20 +51,12 @@
         <v-divider></v-divider>
         <v-list-subheader class="my-2">PESSOAS</v-list-subheader>
         <v-list-item
-            prepend-icon="mdi-account"
-            title="Professores"
-            value="professores"
-            rounded="pill"
-            router
-            to="/professores"
-        ></v-list-item>
-        <v-list-item
             prepend-icon="mdi-account-cog"
-            title="Administradores"
-            value="administradores"
+            title="Pessoas"
+            value="users"
             rounded="pill"
             router
-            to="/administradores"
+            to="/dashboard/users"
         ></v-list-item>
       </v-list>
       <v-divider></v-divider>

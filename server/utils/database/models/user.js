@@ -29,6 +29,11 @@ export default class User extends Model {
                     type: DataTypes.SMALLINT,
                     allowNull: false,
                     default: 0
+                },
+                is_deleted: {
+                    type: DataTypes.BOOLEAN,
+                    allowNull: false,
+                    default: false
                 }
             },
             {

@@ -120,7 +120,6 @@ export default {
         await MaterialSchema.validate(data);
         return true;
       } catch (err) {
-        console.log(err);
         this.errors[err.path] = err.message;
         return false;
       }
@@ -146,9 +145,8 @@ export default {
               Authorization: `Bearer ${this.auth.token}`
             }
           });
-          setTimeout(() => {
-            navigateTo('/dashboard/materials');
-          }, 1500);
+          navigateTo('/dashboard/materials');
+
         } catch (err) {
           console.error(err);
         }

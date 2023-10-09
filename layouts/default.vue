@@ -8,6 +8,16 @@
       </template>
       <v-app-bar-title>Almox&reg;</v-app-bar-title>
       <template v-slot:append>
+        <v-btn router to="/"
+               variant="flat">
+          Home
+        </v-btn>
+        <v-btn router to="/sign-in"
+               variant="flat"
+               class="ml-2"
+        >
+          Entrar
+        </v-btn>
       </template>
     </v-app-bar>
 
@@ -15,9 +25,17 @@
       <v-container fluid>
         <slot/>
       </v-container>
+      <Footer/>
     </v-main>
   </v-layout>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import Footer from "~/components/footer/default.vue";
+
+export default {
+  components: {
+    Footer
+  }
+}
 </script>
