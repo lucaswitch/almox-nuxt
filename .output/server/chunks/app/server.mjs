@@ -1,4 +1,4 @@
-import { version as version$1, unref, inject as inject$1, Fragment, reactive, computed, watchEffect, toRefs, capitalize, warn, defineComponent as defineComponent$1, getCurrentInstance as getCurrentInstance$1, ref, provide, shallowRef, createVNode, mergeProps, watch, onScopeDispose, toRaw, hasInjectionContext, effectScope, useSSRContext, createApp, isRef, isReactive, getCurrentScope, nextTick, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, toRef, shallowReactive, isReadonly, markRaw, defineAsyncComponent, isShallow, withCtx, h, Suspense, Transition } from 'vue';
+import { version as version$1, unref, inject as inject$1, hasInjectionContext, Fragment, reactive, computed, watchEffect, toRefs, capitalize, warn, defineComponent as defineComponent$1, getCurrentInstance as getCurrentInstance$1, ref, provide, shallowRef, createVNode, mergeProps, watch, onScopeDispose, toRaw, effectScope, useSSRContext, createApp, isRef, isReactive, getCurrentScope, nextTick, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, toRef, shallowReactive, isReadonly, markRaw, defineAsyncComponent, isShallow, withCtx, h, Suspense, Transition } from 'vue';
 import { k as useRuntimeConfig$1, n as withQuery, o as hasProtocol, p as parseURL, q as isScriptProtocol, j as joinURL, c as createError$1, $ as $fetch, t as sanitizeStatusCode, v as createHooks, x as parse, y as getRequestHeader, z as defu, A as destr, B as isEqual$1, C as setCookie, D as getCookie, E as deleteCookie } from '../nitro/node-server.mjs';
 import { getActiveHead } from 'unhead';
 import { defineHeadPlugin } from '@unhead/shared';
@@ -620,6 +620,18 @@ function executeAsync(function_) {
   }
   return [awaitable, restore];
 }
+const __nuxt_page_meta$6 = {
+  layout: "dashboard"
+};
+const __nuxt_page_meta$5 = {
+  layout: "dashboard"
+};
+const __nuxt_page_meta$4 = {
+  layout: "dashboard"
+};
+const __nuxt_page_meta$3 = {
+  layout: "dashboard"
+};
 const __nuxt_page_meta$2 = {
   layout: "dashboard"
 };
@@ -627,40 +639,72 @@ const __nuxt_page_meta$1 = {
   layout: "dashboard"
 };
 const __nuxt_page_meta = {
-  layout: "dashboard"
+  layout: "default"
 };
 const _routes = [
   {
-    name: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.name) ?? "dashboard",
-    path: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.path) ?? "/dashboard",
-    meta: __nuxt_page_meta$2 || {},
-    alias: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.alias) || [],
-    redirect: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.redirect) || void 0,
+    name: (__nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.name) ?? "dashboard",
+    path: (__nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.path) ?? "/dashboard",
+    meta: __nuxt_page_meta$6 || {},
+    alias: (__nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.alias) || [],
+    redirect: (__nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.redirect) || void 0,
     component: () => import('./_nuxt/index-09a77090.mjs').then((m) => m.default || m)
   },
   {
-    name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "dashboard-materials-add",
-    path: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.path) ?? "/dashboard/materials/add",
+    name: (__nuxt_page_meta$5 == null ? void 0 : __nuxt_page_meta$5.name) ?? "dashboard-materials-add",
+    path: (__nuxt_page_meta$5 == null ? void 0 : __nuxt_page_meta$5.path) ?? "/dashboard/materials/add",
+    meta: __nuxt_page_meta$5 || {},
+    alias: (__nuxt_page_meta$5 == null ? void 0 : __nuxt_page_meta$5.alias) || [],
+    redirect: (__nuxt_page_meta$5 == null ? void 0 : __nuxt_page_meta$5.redirect) || void 0,
+    component: () => import('./_nuxt/add-3bc08d6f.mjs').then((m) => m.default || m)
+  },
+  {
+    name: (__nuxt_page_meta$4 == null ? void 0 : __nuxt_page_meta$4.name) ?? "dashboard-materials",
+    path: (__nuxt_page_meta$4 == null ? void 0 : __nuxt_page_meta$4.path) ?? "/dashboard/materials",
+    meta: __nuxt_page_meta$4 || {},
+    alias: (__nuxt_page_meta$4 == null ? void 0 : __nuxt_page_meta$4.alias) || [],
+    redirect: (__nuxt_page_meta$4 == null ? void 0 : __nuxt_page_meta$4.redirect) || void 0,
+    component: () => import('./_nuxt/index-bd68c494.mjs').then((m) => m.default || m)
+  },
+  {
+    name: (__nuxt_page_meta$3 == null ? void 0 : __nuxt_page_meta$3.name) ?? "dashboard-users-id",
+    path: (__nuxt_page_meta$3 == null ? void 0 : __nuxt_page_meta$3.path) ?? "/dashboard/users/:id()",
+    meta: __nuxt_page_meta$3 || {},
+    alias: (__nuxt_page_meta$3 == null ? void 0 : __nuxt_page_meta$3.alias) || [],
+    redirect: (__nuxt_page_meta$3 == null ? void 0 : __nuxt_page_meta$3.redirect) || void 0,
+    component: () => import('./_nuxt/_id_-ccf05c4d.mjs').then((m) => m.default || m)
+  },
+  {
+    name: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.name) ?? "dashboard-users-add",
+    path: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.path) ?? "/dashboard/users/add",
+    meta: __nuxt_page_meta$2 || {},
+    alias: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.alias) || [],
+    redirect: (__nuxt_page_meta$2 == null ? void 0 : __nuxt_page_meta$2.redirect) || void 0,
+    component: () => import('./_nuxt/add-8c9dd846.mjs').then((m) => m.default || m)
+  },
+  {
+    name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "dashboard-users",
+    path: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.path) ?? "/dashboard/users",
     meta: __nuxt_page_meta$1 || {},
     alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
     redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import('./_nuxt/add-6cd32350.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-7014d154.mjs').then((m) => m.default || m)
   },
   {
-    name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "dashboard-materials",
-    path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/dashboard/materials",
+    name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
+    path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/",
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./_nuxt/index-bf49fc97.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-c028ced0.mjs').then((m) => m.default || m)
   },
   {
-    name: "index",
-    path: "/",
+    name: "sign-in",
+    path: "/sign-in",
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-101456a4.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-e3f1efb0.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -3541,8 +3585,9 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  dashboard: () => import('./_nuxt/dashboard-04c59f63.mjs').then((m) => m.default || m),
-  default: () => import('./_nuxt/default-41bb6729.mjs').then((m) => m.default || m)
+  dashboard: () => import('./_nuxt/dashboard-37ec140f.mjs').then((m) => m.default || m),
+  default: () => import('./_nuxt/default-05ab4e93.mjs').then((m) => m.default || m),
+  landing: () => import('./_nuxt/landing-f5e7d6a8.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent$1({
   name: "LayoutLoader",
@@ -3821,7 +3866,7 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-404-4fcd0846.mjs').then((r) => r.default || r));
+    const _Error404 = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-404-a49640eb.mjs').then((r) => r.default || r));
     const _Error = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-500-b1e20b28.mjs').then((r) => r.default || r));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
@@ -3907,5 +3952,5 @@ let entry;
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { keyCodes as $, IN_BROWSER as A, useToggleScope as B, useRtl as C, focusableChildren as D, EventProp as E, getNextElement as F, focusChild as G, useDisplay as H, IconValue as I, createRange as J, callEvent as K, useRouter as L, consoleWarn as M, getCurrentInstanceName as N, pick as O, defineStore as P, defineComponent as Q, deprecate as R, getPropertyFromItem as S, includes as T, findChildrenWithProvide as U, useIcon as V, flattenFragments as W, SUPPORTS_INTERSECTION as X, hasEvent as Y, isObject as Z, _export_sfc as _, isOn as a, isCssColor as a0, parseColor as a1, getForeground as a2, breakpoints as b, createError as c, deepEqual as d, entry$1 as default, eventName as e, getUid as f, genericComponent as g, provideDefaults as h, injectHead as i, filterInputAttrs as j, matchesSelector as k, provideTheme as l, makeThemeProps as m, navigateTo as n, omit as o, propsFactory as p, useLocale as q, resolveUnrefHeadInput as r, destructComputed as s, consoleError as t, useProxiedModel as u, convertToUnit as v, wrapInArray as w, clamp as x, refElement as y, getCurrentInstance as z };
+export { useIcon as $, refElement as A, getCurrentInstance as B, IN_BROWSER as C, useToggleScope as D, EventProp as E, useRtl as F, focusableChildren as G, getNextElement as H, IconValue as I, focusChild as J, useDisplay as K, createRange as L, useRouter as M, consoleWarn as N, getCurrentInstanceName as O, pick as P, defineStore as Q, defineComponent as R, deprecate as S, getPropertyFromItem as T, SUPPORTS_INTERSECTION as U, includes as V, isCssColor as W, parseColor as X, getForeground as Y, findChildrenWithProvide as Z, _export_sfc as _, callEvent as a, flattenFragments as a0, hasEvent as a1, isObject as a2, keyCodes as a3, convertToUnit as b, createError as c, clamp as d, entry$1 as default, useRoute as e, filterInputAttrs as f, genericComponent as g, isOn as h, injectHead as i, eventName as j, breakpoints as k, deepEqual as l, makeThemeProps as m, navigateTo as n, getUid as o, propsFactory as p, provideDefaults as q, resolveUnrefHeadInput as r, matchesSelector as s, omit as t, useProxiedModel as u, provideTheme as v, wrapInArray as w, useLocale as x, destructComputed as y, consoleError as z };
 //# sourceMappingURL=server.mjs.map

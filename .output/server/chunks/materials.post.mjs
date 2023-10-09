@@ -1,6 +1,5 @@
 import { a as defineEventHandler, c as createError, r as readBody, M as Material } from './nitro/node-server.mjs';
-import * as Yup from 'yup';
-import { pt } from 'yup-locale-pt';
+import { M as MaterialSchema } from './validation.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:zlib';
@@ -16,17 +15,8 @@ import 'path';
 import 'sequelize';
 import 'jsonwebtoken';
 import 'dotenv';
-
-Yup.setLocale(pt);
-const { object, string, number } = Yup;
-const MaterialSchema = object({
-  name: string().required("O nome do material \xE9 requerido").min(1).max(100),
-  formula: string().typeError("Preencha uma f\xF3rmula v\xE1lida.").required("A formula do material \xE9 requerido").min(1).max(100),
-  concentration: number().typeError("Preencha um n\xFAmero v\xE1lido.").required("A concentra\xE7\xE3o do material \xE9 requerido").min(1).max(100),
-  weight: number().required("O peso do material \xE9 requerido").min(0).max(1e4),
-  metric: string().required("A unidade do material \xE9 requerido").max(25),
-  note: string().required("A observa\xE7\xE3o do material \xE9 requerido").max(1e3)
-});
+import 'yup';
+import 'yup-locale-pt';
 
 const materials_post = defineEventHandler(async (event) => {
   if (!event.context.user) {

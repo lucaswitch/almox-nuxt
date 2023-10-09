@@ -1,1 +1,0 @@
-import{L as t,a8 as s,z as e,aa as n}from"./entry.b6850ddb.js";function i(){const o=t(!1);return s(()=>{window.requestAnimationFrame(()=>{o.value=!0})}),{ssrBootStyles:e(()=>o.value?void 0:{transition:"none !important"}),isBooted:n(o)}}export{i as u};
