@@ -13,7 +13,7 @@ export default class StockEntry extends Model {
           primaryKey: true,
           type: DataTypes.BIGINT,
         },
-        stock_id: {
+        material_id: {
           allowNull: false,
           type: DataTypes.BIGINT,
         },

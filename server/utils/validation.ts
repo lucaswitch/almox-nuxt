@@ -40,3 +40,7 @@ export const UserSchema = object({
         .label('Tipo'),
     username: string().typeError('Preencha o usuário').required().min(2).max(40).label('Usuário')
 });
+
+export const Schema = object({
+
+});
