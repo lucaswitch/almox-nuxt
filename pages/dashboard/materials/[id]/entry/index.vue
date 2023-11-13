@@ -1,30 +1,29 @@
 <template>
   <h6 class="text-h6">
-    Usuários
+    Adicionar entradas e saidas
   </h6>
   <v-card class="mt-2 pb-3" max-width="644">
     <v-card-title>
-      Adicionar novo usuário
+      Entradas
     </v-card-title>
     <v-card-subtitle>
-      Para adicionar novos usuários preencha o formulário abaixo.
+      Adicione uma nova entrada
     </v-card-subtitle>
     <div class="mt-4">
-      <user-form />
+      <stock-form :material_id="material_id"/>
     </div>
   </v-card>
 </template>
 
-<script>
-import UserForm from '~/components/forms/user-form.vue'
+<script setup lang="ts">
+import StockForm from '~/components/forms/stock-form.vue'
+
+const route = useRoute()
+const material_id = route.params.id
 
 definePageMeta({
   layout: "dashboard",
 });
 
-export default {
-  components: {
-    UserForm
-  }
-}
+
 </script>

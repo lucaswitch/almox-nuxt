@@ -13,7 +13,7 @@
       <th class="text-left">
         Nome
       </th>
-      <th class="text-left">
+      <th class="text-right">
         Quantidade
       </th>
       <th class="text-left">
@@ -25,6 +25,7 @@
       <th class="text-left">
         Marca
       </th>
+      <th class="text-right">Ações</th>
     </tr>
     </thead>
     <tbody>
@@ -32,19 +33,30 @@
         :key="item.name"
     >
       <td>{{ item.name }}</td>
-      <td>{{ '--' }}</td>
+      <td class="text-right">{{ (item.quantity) ? item.quantity : 0 }}</td>
       <td>{{ item.weight }}</td>
       <td>{{ item.concentration }}</td>
       <td>{{ item.brand }}</td>
-      <td>
-        <v-btn-toggle
-            color="primary"
-            mandatory
-        >
-          <v-btn variant="text" compact>
-            Remover
-          </v-btn>
-        </v-btn-toggle>
+      <td class="text-right">
+        <v-menu>
+          <template v-slot:activator="{ props }">
+            <v-btn
+                color="primary"
+                variant="tonal"
+                v-bind="props"
+            >
+              Ações
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item>
+              <v-list-item-title>Remover</v-list-item-title>
+            </v-list-item>
+            <v-list-item :href="'/dashboard/materials/'+item.id+'/entry'">
+              <v-list-item-title>Estoque</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </td>
     </tr>
     </tbody>

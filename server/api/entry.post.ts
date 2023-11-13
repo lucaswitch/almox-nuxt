@@ -1,6 +1,5 @@
-import {MaterialSchema} from "~/server/utils/validation";
-import {Material} from "~/server/utils/database/models";
-import StockEntry from "~/server/utils/database/models/stock_entry";
+import {StockEntry} from "~/server/utils/database/models";
+import moment from 'moment'
 
 export default defineEventHandler(async function (event) {
     if (!event.context.user) {
@@ -11,25 +10,15 @@ export default defineEventHandler(async function (event) {
     }
     const body = await readBody(event);
 
+    const {amount, material_id} = body;
 
-    // try {
-    //     await MaterialSchema.validate(body);
-    // } catch (err) {
-    //     createError({
-    //         statusCode: 400,
-    //         statusMessage: 'Dados de material inválidos.'
-    //     })
-    // }
-    //
-    // const {name, formula, concentration, weight, brand, observation, metric} = body;
-    // try {
-    //     return await Material.create({
-    //         name, formula, concentration, weight, brand, observation, metric
-    //     });
-    // } catch (err) {
-    //     createError({
-    //         statusCode: 500,
-    //         statusMessage: 'Não foi possível adicionar este material'
-    //     })
-    // }
+    const created_at = moment().utc().format('YYYY-MM-DD HH:mm:ss');
+    const updated_at = created_at;
+    return await StockEntry.create({
+        user_id: 1,
+        material_id,
+        amount,
+        created_at,
+        updated_at
+    })
 })

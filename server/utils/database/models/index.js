@@ -4,6 +4,6 @@ import initModels from "./init-models.js";
 
 dotenv.config();
 
-export const {Appointment, AppointmentMaterial, Lab, Material, User} =
+export const {Appointment, AppointmentMaterial, Lab, Material, User, StockEntry} =
     initModels(sequelize);
 

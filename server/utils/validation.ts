@@ -41,6 +41,6 @@ export const UserSchema = object({
     username: string().typeError('Preencha o usuário').required().min(2).max(40).label('Usuário')
 });
 
-export const Schema = object({
-
+export const EntrySchema = object({
+    amount: number().typeError('Por favor insira uma quantidade em formato numérico').required('Por favor insira uma quantidade').max(99999).min(-99999).integer().label('Quantidade').notOneOf([0], 'Não pode ser quantidade zero')
 });

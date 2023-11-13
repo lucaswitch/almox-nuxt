@@ -21,12 +21,7 @@ export default class StockEntry extends Model {
           allowNull: false,
           type: DataTypes.BIGINT,
         },
-        withdrawn_amount: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          defaultValue: 0,
-        },
-        received_amount: {
+        amount: {
           type: DataTypes.INTEGER,
           allowNull: false,
           defaultValue: 0,

@@ -1,5 +1,5 @@
 import {User} from "~/server/utils/database/models";
-import {as} from "~/.output/public/_nuxt/entry.b6850ddb";
+import {as} from "~/.output/public/_nuxt/[id].b6850ddb";
 
 export default defineEventHandler(async (event) => {
     if (!event.context.user) {
