@@ -21,6 +21,7 @@
     "@types/jsonwebtoken": "^9.0.3",
     "add": "^2.0.6",
     "jsonwebtoken": "^9.0.2",
+    "maska": "^2.1.10",
     "moment": "^2.29.4",
     "mysql2": "^3.6.1",
     "sequelize": "^6.33.0",

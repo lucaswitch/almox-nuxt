@@ -16,6 +16,10 @@ export default class Lab extends Model {
           type: DataTypes.STRING(255),
           allowNull: true,
         },
+        student_capacity: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+        },
       },
       {
         tableName: "lab",

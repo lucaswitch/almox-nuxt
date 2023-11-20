@@ -1,23 +1,23 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="preferences.drawer" permanent>
+    <v-navigation-drawer v-model="preferences.drawer" >
       <v-list nav>
-        <v-list-subheader class="my-2">PRINCIPAL</v-list-subheader>
-        <v-list-item
-            prepend-icon="mdi-home"
-            title="Início"
-            value="inicio"
-            rounded="pill"
-            router
-            to="/inicio"
-        ></v-list-item>
+        <v-list-subheader class="my-2">Laboratórios</v-list-subheader>
         <v-list-item
             prepend-icon="mdi-calendar"
             title="Agenda"
             value="agenda"
             rounded="pill"
             router
-            to="/agenda"
+            to="/labs/schedule"
+        ></v-list-item>
+        <v-list-item
+            prepend-icon="mdi-door"
+            title="Laboratórios"
+            value="todos"
+            rounded="pill"
+            router
+            to="/dashboard/labs"
         ></v-list-item>
         <v-divider></v-divider>
         <v-list-subheader class="my-2">MATERIAIS</v-list-subheader>
@@ -29,14 +29,14 @@
             router
             to="/dashboard/materials"
         ></v-list-item>
-        <v-list-item
-            prepend-icon="mdi-flask-empty-minus"
-            title="Devolução de materiais"
-            value="devolver"
-            rounded="pill"
-            router
-            to="/materiais/devolver"
-        ></v-list-item>
+<!--        <v-list-item-->
+<!--            prepend-icon="mdi-flask-empty-minus"-->
+<!--            title="Devolução de materiais"-->
+<!--            value="devolver"-->
+<!--            rounded="pill"-->
+<!--            router-->
+<!--            to="/materiais/devolver"-->
+<!--        ></v-list-item>-->
         <v-divider></v-divider>
         <v-list-subheader class="my-2">FORMULÁRIOS</v-list-subheader>
 
