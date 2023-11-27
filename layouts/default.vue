@@ -6,7 +6,7 @@
     >
       <template v-slot:prepend>
       </template>
-      <v-app-bar-title>Almox&reg;</v-app-bar-title>
+      <v-app-bar-title>Almox UniCeub&reg;</v-app-bar-title>
       <template v-slot:append>
         <v-btn router to="/"
                variant="flat">

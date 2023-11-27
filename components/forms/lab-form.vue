@@ -45,7 +45,8 @@ const errors = ref<any>({})
 async function validate(): Promise<boolean> {
   errors.value = {};
   const data = {
-
+    name: name.value,
+    student_capacity: parseInt(student_capacity.value, 10)
   }
   try {
     await LabSchema.validate(data);

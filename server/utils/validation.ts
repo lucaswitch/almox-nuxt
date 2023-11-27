@@ -44,7 +44,14 @@ export const UserSchema = object({
 });
 
 export const EntrySchema = object({
-    amount: number().typeError('Por favor insira uma quantidade em formato numérico').required('Por favor insira uma quantidade').max(99999).min(-99999).integer().label('Quantidade').notOneOf([0], 'Não pode ser quantidade zero')
+    amount: number()
+        .typeError('Por favor insira uma quantidade em formato numérico')
+        .required('Por favor insira uma quantidade')
+        .max(99999)
+        .min(-99999)
+        .integer()
+        .label('Quantidade')
+        .notOneOf([0], 'Não pode ser quantidade zero')
 });
 
 
@@ -67,10 +74,10 @@ function testIsValidDate(value: any) {
 }
 
 function testIfIsFutureDate(value: any) {
-    let date = moment(value, 'DD/MM/YYYY HH:mm').local()
+    let date = moment(value, 'DD/MM/YYYY HH:mm')
     if (date && date.isValid()) {
         const now = moment()
-        return now.unix() > date.unix()
+        return now.unix() < date.unix()
     }
     return false
 }
@@ -86,12 +93,12 @@ export const ScheduleSchema = object({
         .label('Data de inicio de reserva')
         .test('test', ({label}) => `A ${label} deve ser uma data válida.`, testIsValidDate)
         .test('testFuture', ({label}) => `A ${label} deve ser uma data futura.`, testIfIsFutureDate),
-    lab_id: number().typeError('Preencha o laboratório.').integer(true).label('Laboratório'),
+    lab_id: number().typeError('Preencha o laboratório.').integer().label('Laboratório'),
     note: string().required().min(1).max(255).label('Motivo')
 })
 
 
 export const ScheduleMaterialSchema = object({
-    material_id: number().typeError('Selecione o material').label('Material').integer().min(1),
-    quantity: number().typeError('Selecione a quantidade').label('Quantidade').integer().min(1)
+    material_id: number().required().typeError('Selecione o material').label('Material').integer().min(1),
+    quantity: number().typeError('Selecione a quantidade').label('Quantidade').integer().min(1).min(1)
 })

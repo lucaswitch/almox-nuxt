@@ -41,6 +41,11 @@ export default class Appointment extends Model {
                     type: DataTypes.DATE,
                     allowNull: false,
                 },
+                is_deleted: {
+                    type: DataTypes.TINYINT,
+                    allowNull: false,
+                    defaultValue: 0
+                }
             },
             {
                 tableName: "appointment",

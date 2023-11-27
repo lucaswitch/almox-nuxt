@@ -47,6 +47,7 @@
 <script setup lang="ts">
 import {EntrySchema} from "~/server/utils/validation";
 import {useAuth} from "~/stores/auth.js";
+import {ca} from "vuetify/locale";
 
 const auth = useAuth();
 
@@ -63,13 +64,14 @@ const created = ref(null)
 const amount = ref(0)
 const errors = ref({})
 
+
 async function validate() {
   errors.value = {}
   try {
-    await EntrySchema.validate({amount: parseInt(amount.value, 10)});
+    await EntrySchema.validate({amount: Number(amount.value)});
     return true;
   } catch (err) {
-    console.log(err)
+    // @ts-ignore
     errors.value[err.path] = err.message;
     return false;
   }
@@ -78,16 +80,21 @@ async function validate() {
 async function add() {
   if (await validate() && disabled) {
     disabled.value = true
-    created.value = await $fetch('/api/entry', {
-      method: 'post',
-      body: {
-        amount: parseInt(amount.value, 10),
-        material_id: parseInt(material_id, 10)
-      },
-      headers: {
-        Authorization: `Bearer ${auth.token}`
-      }
-    })
+    try {
+      created.value = await $fetch('/api/entry', {
+        method: 'post',
+        body: {
+          amount: parseInt(amount.value, 10),
+          material_id: parseInt(material_id, 10)
+        },
+        headers: {
+          Authorization: `Bearer ${auth.token}`
+        }
+      })
+    } catch (err) {
+      // @ts-ignore
+      errors.value = err.response._data.data
+    }
     disabled.value = false
   }
 }

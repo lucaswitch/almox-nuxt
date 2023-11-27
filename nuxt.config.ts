@@ -32,12 +32,10 @@ export default defineNuxtConfig({
             /* nuxt-vuetify module options */
             treeshaking: true,
             useIconCDN: true,
-
             font: {
                 family: 'Roboto'
             },
             icons: 'mdi',
-
             /* vite-plugin-vuetify options */
             styles: true,
             autoImport: true,
@@ -45,4 +43,5 @@ export default defineNuxtConfig({
         }
     },
     devtools: {enabled: false},
+
 })

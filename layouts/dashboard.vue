@@ -9,7 +9,7 @@
             value="agenda"
             rounded="pill"
             router
-            to="/labs/schedule"
+            to="/dashboard/schedules"
         ></v-list-item>
         <v-list-item
             prepend-icon="mdi-door"
@@ -28,25 +28,6 @@
             rounded="pill"
             router
             to="/dashboard/materials"
-        ></v-list-item>
-<!--        <v-list-item-->
-<!--            prepend-icon="mdi-flask-empty-minus"-->
-<!--            title="Devolução de materiais"-->
-<!--            value="devolver"-->
-<!--            rounded="pill"-->
-<!--            router-->
-<!--            to="/materiais/devolver"-->
-<!--        ></v-list-item>-->
-        <v-divider></v-divider>
-        <v-list-subheader class="my-2">FORMULÁRIOS</v-list-subheader>
-
-        <v-list-item
-            prepend-icon="mdi-pencil"
-            title="Relatório"
-            value="relatorio"
-            rounded="pill"
-            router
-            to="/relatorio"
         ></v-list-item>
         <v-divider></v-divider>
         <v-list-subheader class="my-2">PESSOAS</v-list-subheader>
@@ -70,11 +51,11 @@
     </v-navigation-drawer>
     <v-app-bar flat class="border-b" color="primary">
       <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Almox&reg;</v-app-bar-title>
+      <v-app-bar-title>Almox UniCeub&reg;</v-app-bar-title>
       <template v-slot:append>
         <div class="user-details">
           <p class="text-subtitle-1">
-            {{ auth.user?.full_name }}
+            {{ auth.user?.full_name }} ({{ auth.user.role === 0 ? 'Admin' : 'Professor'}})
           </p>
           <v-avatar
               size="36px"
@@ -109,9 +90,9 @@ export default {
     toggleDrawer() {
       this.preferences.toggleDrawer();
     },
-    logout() {
+    async logout() {
       this.auth.logout();
-      navigateTo('/');
+      await navigateTo('/');
     }
   }
 }

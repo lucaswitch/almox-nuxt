@@ -99,7 +99,7 @@ export default {
             body
           });
           this.auth.setCredentials({user, token});
-          navigateTo('/dashboard');
+          navigateTo('/dashboard/schedules');
         } catch (err) {
           this.errors['username'] = 'Usuário ou senha inválidos.';
         }

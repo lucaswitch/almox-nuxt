@@ -36,48 +36,48 @@
     </div>
   </v-sheet>
   <v-timeline align="start">
-    <v-timeline-item dot-color="teal-lighten-3">
+    <v-timeline-item dot-color="primary">
       <template v-slot:opposite>
         Roadmap de construção
       </template>
       <div>
         <div class="text-h6">Login</div>
         <p>
-          Implementar login de usuários "Admin" e Professor.
+          Done!
         </p>
       </div>
     </v-timeline-item>
 
     <v-timeline-item
-        dot-color="teal-lighten-3"
+        dot-color="primary"
     >
       <div class="text-h6">Materiais</div>
       <p>
-        Ainda não totalmente suportado.
+        Ainda é necessário retificar os campos de acordo com a necessidade do cliente.
       </p>
     </v-timeline-item>
-    <v-timeline-item>
+    <v-timeline-item dot-color="primary">
       <div class="text-h6">Cadastro de laboratórios</div>
       <p>
-        Ainda não totalmente suportado.
+        Done!
       </p>
     </v-timeline-item>
-    <v-timeline-item>
+    <v-timeline-item dot-color="primary">
       <div class="text-h6">Reserva de laboratórios</div>
       <p>
         Ainda não totalmente suportado.
       </p>
     </v-timeline-item>
-    <v-timeline-item>
+    <v-timeline-item dot-color="primary">
       <div class="text-h6">Devolução de materiais de reserva</div>
       <p>
-        Ainda não totalmente suportado.
+        Done!
       </p>
     </v-timeline-item>
-    <v-timeline-item>
+    <v-timeline-item dot-color="gray">
       <div class="text-h6">Relatório mensal</div>
       <p>
-        Ainda não totalmente suportado.
+        Ainda não concluído
       </p>
     </v-timeline-item>
   </v-timeline>

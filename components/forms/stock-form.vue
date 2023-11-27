@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import {getLocalDateString} from "~/server/utils/formatter";
+import {getLocalDateString} from "~/utils/formatter";
 import {useAuth} from "~/stores/auth.js";
 import type {StockEntry} from "~/server/utils/types";
 

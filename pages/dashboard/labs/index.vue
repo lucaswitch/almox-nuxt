@@ -7,12 +7,7 @@
       Adicionar laboratório
     </v-btn>
   </NuxtLink>
-  <NuxtLink to="/dashboard/labs/schedule">
-    <v-btn
-        color="primary" class="ml-1">
-      Agendar laboratório
-    </v-btn>
-  </NuxtLink>
+
   <v-table class="mt-2">
     <thead>
     <tr>

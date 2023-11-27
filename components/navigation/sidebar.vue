@@ -50,7 +50,7 @@
           value="relatorio"
           rounded="pill"
           router
-          to="/relatorio"
+          to="/"
       ></v-list-item>
       <v-divider></v-divider>
       <v-list-subheader class="my-2">PESSOAS</v-list-subheader>
@@ -92,9 +92,9 @@ export default {
     }
   },
   methods: {
-    logout() {
+    async logout() {
       this.auth.logout();
-      navigateTo('/');
+      await navigateTo('/');
     }
   }
 }
