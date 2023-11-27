@@ -1,0 +1,1 @@
+import{aI as s}from"./entry.a8ea04dc.js";const r=s("auth",{state(){return{user:null,token:null}},getters:{},actions:{setCredentials({user:t,token:e}){this.user=t,this.token=e},logout(){this.user=null,this.token=null}},persist:!0});export{r as u};
